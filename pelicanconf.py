@@ -27,6 +27,17 @@ PLUGINS = ['i18n_subsites', 'related_posts', 'series', 'tag_cloud']
 PLUGIN_PATHS = ['./pelican-plugins/']
 I18N_TEMPLATES_LANG = 'en'
 
+# Markdown settings
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown_markup_emoji.markup_emoji': {},
+    },
+    'output_format': 'html5',
+}
+
 # Bootstrap Settings
 BOOTSTRAP_THEME = 'darkly'
 PYGMENTS_STYLE = 'solarizeddark'

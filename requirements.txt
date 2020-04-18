@@ -2,3 +2,4 @@ pelican
 ghp-import
 Markdown
 python-gettext
+markdown-markup-emoji
