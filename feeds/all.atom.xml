@@ -40,15 +40,16 @@
 &lt;/ul&gt;
 &lt;h3&gt;Adding Emoji Support &lt;span class="emoji"&gt;🤪&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;Ok, so I took the easy route and just linked a bunch of guides... In penitence I will offer a critical feature not mentioned in the guides above, &lt;strong&gt;Emoji support&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;To add Emoji support to you blog all you have to do is add the following:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To add Emoji support to your blog all you have to do is the following:&lt;/p&gt;
+&lt;p&gt;Add the &lt;a href="https://pypi.org/project/markdown-markup-emoji/"&gt;Markdown emoji module&lt;/a&gt; to your &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;...&lt;/span&gt;
 &lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;markup&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;emoji&lt;/span&gt;
 &lt;span class="p"&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and install with pip, &lt;code&gt;pip install -r requirements.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Next, add the emoji Markdown extension to your &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;...&lt;/span&gt;
 &lt;span class="c1"&gt;# Markdown settings&lt;/span&gt;
 &lt;span class="n"&gt;MARKDOWN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -64,7 +65,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Make sure you run &lt;code&gt;pip install -r requirements.txt&lt;/code&gt; to install the module and you're ready to add Emoji's to your Markdown! &lt;span class="emoji"&gt;👌&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now you're all set to use Emoji's in your Markdown! &lt;span class="emoji"&gt;👌&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;A full list of Unicode Emoji's can be found &lt;a href="https://unicode.org/emoji/charts/full-emoji-list.html"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Themes &lt;span class="emoji"&gt;🖼&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;When I first started looking at themes I couldn't decide which one I wanted and so instead cloned the entire Pelican theme project into my project's root directory:&lt;/p&gt;

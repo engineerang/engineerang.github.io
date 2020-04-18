@@ -155,15 +155,16 @@ Engineerang            </a>
 </ul>
 <h3>Adding Emoji Support <span class="emoji">🤪</span></h3>
 <p>Ok, so I took the easy route and just linked a bunch of guides... In penitence I will offer a critical feature not mentioned in the guides above, <strong>Emoji support</strong>.</p>
-<p>To add Emoji support to you blog all you have to do is add the following:</p>
-<p><code>requirements.txt</code></p>
+<p>To add Emoji support to your blog all you have to do is the following:</p>
+<p>Add the <a href="https://pypi.org/project/markdown-markup-emoji/">Markdown emoji module</a> to your <code>requirements.txt</code></p>
 <div class="highlight"><pre><span></span><code><span class="p">...</span>
 <span class="n">markdown</span><span class="o">-</span><span class="n">markup</span><span class="o">-</span><span class="n">emoji</span>
 <span class="p">...</span>
 </code></pre></div>
 
 
-<p><code>pelicanconf.py</code></p>
+<p>and install with pip, <code>pip install -r requirements.txt</code>.</p>
+<p>Next, add the emoji Markdown extension to your <code>pelicanconf.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="o">...</span>
 <span class="c1"># Markdown settings</span>
 <span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
@@ -179,7 +180,7 @@ Engineerang            </a>
 </code></pre></div>
 
 
-<p>Make sure you run <code>pip install -r requirements.txt</code> to install the module and you're ready to add Emoji's to your Markdown! <span class="emoji">👌</span></p>
+<p>Now you're all set to use Emoji's in your Markdown! <span class="emoji">👌</span></p>
 <p>A full list of Unicode Emoji's can be found <a href="https://unicode.org/emoji/charts/full-emoji-list.html">here</a></p>
 <h3>Themes <span class="emoji">🖼</span></h3>
 <p>When I first started looking at themes I couldn't decide which one I wanted and so instead cloned the entire Pelican theme project into my project's root directory:</p>
