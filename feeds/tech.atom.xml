@@ -1,2 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Engineerang - Tech</title><link href="/" rel="alternate"></link><link href="/feeds/tech.atom.xml" rel="self"></link><id>/</id><updated>2019-10-27T00:00:00+11:00</updated><subtitle>Planning makes perfect</subtitle><entry><title>First Post</title><link href="/first-post.html" rel="alternate"></link><published>2019-10-27T00:00:00+11:00</published><updated>2019-10-27T00:00:00+11:00</updated><author><name>Engineerang</name></author><id>tag:None,2019-10-27:/first-post.html</id><summary type="html">&lt;p&gt;First post to init the blog.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello world!&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="python"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Engineerang - Tech</title><link href="/" rel="alternate"></link><link href="/feeds/tech.atom.xml" rel="self"></link><id>/</id><updated>2020-04-18T00:00:00+10:00</updated><subtitle>Planning makes perfect</subtitle><entry><title>Hello World - Using Pelican and GitHub to create a blog.</title><link href="/hello-world.html" rel="alternate"></link><published>2020-04-18T00:00:00+10:00</published><updated>2020-04-18T00:00:00+10:00</updated><author><name>Engineerang</name></author><id>tag:None,2020-04-18:/hello-world.html</id><summary type="html">&lt;p&gt;The birth of a blog using Pelican and GitHub.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been thinking about writing a blog for a while now and have wanted to do so for a number of reasons. The most notable being that I want to give back to the open source community that has so selflessly helped me grow and learn. Coming in at a close second is that during my journey, there have been occasions where I've had to collate A LOT of resources and dumpster-dive obscure parts of the internet to find answers.&lt;/p&gt;
+&lt;p&gt;With these reasons in mind, my intention is to provide an informative space to write down my thoughts, journal my projects as they're being developed, and share interesting/helpful snippets that I find along the way.&lt;/p&gt;
+&lt;p&gt;This article will be no exception to the aforementioned intention and thus I will inaugurate my blog with why I chose Pelican and Github and how I went about setting it all up.&lt;/p&gt;
+&lt;h2&gt;Why use Pelican? &lt;span class="emoji"&gt;🤔&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;I knew coming into this project that I would have a list of things I wanted, and some things that I could compromise on when choosing a solution. These broadly fell in to the following categories:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Blog Application:&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MUST be lightweight requiring no additional infrastructure (e.g. a database)&lt;/li&gt;
+&lt;li&gt;MUST be able to create content in a straightforward way (i.e. not raw HTML)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Blog integrations:&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MUST include the ability to customize 'themes' for a personalized experience.&lt;/li&gt;
+&lt;li&gt;MUST support a comments section&lt;/li&gt;
+&lt;li&gt;MUST support 'Single Sign On' (i.e i don't want to manage users)&lt;/li&gt;
+&lt;li&gt;SHOULD support site analytics&lt;/li&gt;
+&lt;li&gt;SHOULD support language translation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Hosting:&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MUST be hosting agnostic (i.e. many options for hosting)&lt;/li&gt;
+&lt;li&gt;MUST have TLS/SSL termination (i.e. some way to get the https Green Lock)&lt;/li&gt;
+&lt;li&gt;MUST support DNS (i.e. some way to point a URL at my blog)&lt;/li&gt;
+&lt;li&gt;SHOULD be free to host&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Personal Constraints:&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MUST maintain control of the content&lt;/li&gt;
+&lt;li&gt;SHOULD be created using Python&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For me, Pelican ticked all of these boxes and some! &lt;span class="emoji"&gt;✅&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Pelican&lt;/h2&gt;
+&lt;p&gt;Honestly, I had intended to write a post on how I built my blog step-by-step for others to follow along. However, due to general life and procrastination I haven't put something together and in the spirit of just getting something published (and thus starting my blog!) I've decided to share the resources that I used to get started. &lt;span class="emoji"&gt;😀&lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Guides &lt;span class="emoji"&gt;📋&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Matthew and Erik's step-by-step guides (links below) are brilliant. I started with Erik's to get a general idea of how Pelican works before using Matthew's to polish up my own blog that you see now. Matthew's guide covers everything from GitHub publishing to integrating Disqus and Google analytics.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/10/deploying-a-static-website-to-github-pages/"&gt;Matthew Davaney's blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python"&gt;Erik O'Shaughnessy' blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Adding Emoji Support &lt;span class="emoji"&gt;🤪&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Ok, so I took the easy route and just linked a bunch of guides... In penitence I will offer a critical feature not mentioned in the guides above, &lt;strong&gt;Emoji support&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To add Emoji support to you blog all you have to do is add the following:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;markup&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;emoji&lt;/span&gt;
+&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="c1"&gt;# Markdown settings&lt;/span&gt;
+&lt;span class="n"&gt;MARKDOWN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extension_configs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;markdown.extensions.codehilite&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;css_class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;highlight&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;markdown.extensions.extra&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;markdown.extensions.meta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;markdown_markup_emoji.markup_emoji&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;output_format&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;html5&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Make sure you run &lt;code&gt;pip install -r requirements.txt&lt;/code&gt; to install the module and you're ready to add Emoji's to your Markdown! &lt;span class="emoji"&gt;👌&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A full list of Unicode Emoji's can be found &lt;a href="https://unicode.org/emoji/charts/full-emoji-list.html"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Themes &lt;span class="emoji"&gt;🖼&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;When I first started looking at themes I couldn't decide which one I wanted and so instead cloned the entire Pelican theme project into my project's root directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-themes.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I ended up using &lt;code&gt;THEME = 'pelican-bootstrap3'&lt;/code&gt;, playing with the theme until I arrived at:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;BOOTSTRAP_THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;darkly&amp;#39;&lt;/span&gt;
+&lt;span class="na"&gt;PYGMENTS_STYLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;solarizeddark&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Plugins &lt;span class="emoji"&gt;🔌&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Similar to themes, I cloned the entire Pelican plugin project into my project's root directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-plugins.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I then played around with the plugins that suited my needs and ended up with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[&amp;#39;i18n_subsites&amp;#39;, &amp;#39;related_posts&amp;#39;, &amp;#39;series&amp;#39;, &amp;#39;tag_cloud&amp;#39;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Helpful Pelican tips &lt;span class="emoji"&gt;🧐&lt;/span&gt;&lt;/h2&gt;
+&lt;h3&gt;Drafting Markdown&lt;/h3&gt;
+&lt;p&gt;As mentioned in my requirements for a static HTML generator, Markdown was my preferred static markup language. Producing Markdown can be a bit tedious because you can't see the end results until you generate it. Another downside to using Markdown is that most plaintext editors generally don't come with spellchecking..&lt;/p&gt;
+&lt;p&gt;To resolve these problems I used the following &lt;a href="https://code.visualstudio.com/Download"&gt;Visual Studio Code&lt;/a&gt; extensions to preview Markdown as I produced it, and prompt me when there's a grammatical error:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one"&gt;Markdown All in One&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"&gt;Code Spell Checker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Blog preview&lt;/h3&gt;
+&lt;p&gt;Before I publish to Github Pages I always preview a local copy of my changes to make sure I'm happy with the formatting and contents. To do this you can run the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican content -o output -s publishconf.py &lt;span class="c1"&gt;# Generate the static files&lt;/span&gt;
+pelican --listen                            &lt;span class="c1"&gt;# Serve the files locally&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now go to &lt;code&gt;127.0.0.1:8000&lt;/code&gt; in your browser for a preview of your newly added article or updated theme. &lt;/p&gt;
+&lt;p&gt;Note: things like Disqus comments won't work locally.&lt;/p&gt;
+&lt;h3&gt;Publishing to GitHub Pages&lt;/h3&gt;
+&lt;p&gt;Everything looks awesome and now you're ready to push your changes and publish your blog!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generate the static files in the output directory&lt;/span&gt;
+pelican content -o output -s publishconf.py                        
+
+&lt;span class="c1"&gt;# Add the output directory to the master branch using ghp-import&lt;/span&gt;
+ghp-import -m &lt;span class="s2"&gt;&amp;quot;Generate Pelican site&amp;quot;&lt;/span&gt; --no-jekyll -b master output 
+
+&lt;span class="c1"&gt;# Push the master branch (output directory files) to the remote repo&lt;/span&gt;
+git push origin master
+
+&lt;span class="c1"&gt;# Commit and push the new content to the content branch&lt;/span&gt;
+git add content
+git commit -m &lt;span class="s1"&gt;&amp;#39;Updated Pelican site!&amp;#39;&lt;/span&gt;
+git push origin content
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now it's time to view your changes in all their glory!&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Hopefully this article was useful and pointed you in the direction of some really helpful resources. I'd like to extend my gratitude to Erik and Matthew for the awesome posts! Couldn't have done it without you.&lt;/p&gt;
+&lt;p&gt;Thanks for taking the time to stop by and I hope to continue bringing you helpful/interesting content going forward. &lt;span class="emoji"&gt;🍻&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;P.S. I have no regrets for the amount of emoji's used in this article. &lt;span class="emoji"&gt;😂&lt;/span&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="blogging"></category><category term="python"></category></entry><entry><title>First Post</title><link href="/first-post.html" rel="alternate"></link><published>2019-10-27T00:00:00+11:00</published><updated>2019-10-27T00:00:00+11:00</updated><author><name>Engineerang</name></author><id>tag:None,2019-10-27:/first-post.html</id><summary type="html">&lt;p&gt;First post to init the blog.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello world!&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="python"></category></entry></feed>

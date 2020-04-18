@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Hello World - Using Pelican and GitHub to create a blog. - Engineerang</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/hello-world.html">
+
+        <meta name="author" content="Engineerang" />
+        <meta name="keywords" content="pelican,blogging,python" />
+        <meta name="description" content="The birth of a blog using Pelican and GitHub." />
+
+        <meta property="og:site_name" content="Engineerang" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Hello World - Using Pelican and GitHub to create a blog."/>
+        <meta property="og:url" content="/hello-world.html"/>
+        <meta property="og:description" content="The birth of a blog using Pelican and GitHub."/>
+        <meta property="article:published_time" content="2020-04-18" />
+            <meta property="article:section" content="Tech" />
+            <meta property="article:tag" content="pelican" />
+            <meta property="article:tag" content="blogging" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="Engineerang" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/solarizeddark.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Engineerang ATOM Feed"/>
+
+        <link href="/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Engineerang Tech ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Engineerang            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/about.html">
+                             About
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="" title="Engineerang"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="/category/tech.html" title="Tech">Tech</a></li>
+                <li class="active">Hello World - Using Pelican and GitHub to create a blog.</li>
+            </ol>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/hello-world.html"
+                       rel="bookmark"
+                       title="Permalink to Hello World - Using Pelican and GitHub to create a blog.">
+                        Hello World - Using Pelican and GitHub to create a blog.
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-04-18T00:00:00+10:00"> Sat 18 April 2020</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/pelican.html">pelican</a>
+        /
+	<a href="/tag/blogging.html">blogging</a>
+        /
+	<a href="/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>I've been thinking about writing a blog for a while now and have wanted to do so for a number of reasons. The most notable being that I want to give back to the open source community that has so selflessly helped me grow and learn. Coming in at a close second is that during my journey, there have been occasions where I've had to collate A LOT of resources and dumpster-dive obscure parts of the internet to find answers.</p>
+<p>With these reasons in mind, my intention is to provide an informative space to write down my thoughts, journal my projects as they're being developed, and share interesting/helpful snippets that I find along the way.</p>
+<p>This article will be no exception to the aforementioned intention and thus I will inaugurate my blog with why I chose Pelican and Github and how I went about setting it all up.</p>
+<h2>Why use Pelican? <span class="emoji">🤔</span></h2>
+<p>I knew coming into this project that I would have a list of things I wanted, and some things that I could compromise on when choosing a solution. These broadly fell in to the following categories:</p>
+<p><em>Blog Application:</em></p>
+<ol>
+<li>MUST be lightweight requiring no additional infrastructure (e.g. a database)</li>
+<li>MUST be able to create content in a straightforward way (i.e. not raw HTML)</li>
+</ol>
+<p><em>Blog integrations:</em></p>
+<ol>
+<li>MUST include the ability to customize 'themes' for a personalized experience.</li>
+<li>MUST support a comments section</li>
+<li>MUST support 'Single Sign On' (i.e i don't want to manage users)</li>
+<li>SHOULD support site analytics</li>
+<li>SHOULD support language translation</li>
+</ol>
+<p><em>Hosting:</em></p>
+<ol>
+<li>MUST be hosting agnostic (i.e. many options for hosting)</li>
+<li>MUST have TLS/SSL termination (i.e. some way to get the https Green Lock)</li>
+<li>MUST support DNS (i.e. some way to point a URL at my blog)</li>
+<li>SHOULD be free to host</li>
+</ol>
+<p><em>Personal Constraints:</em></p>
+<ol>
+<li>MUST maintain control of the content</li>
+<li>SHOULD be created using Python</li>
+</ol>
+<p>For me, Pelican ticked all of these boxes and some! <span class="emoji">✅</span></p>
+<h2>Pelican</h2>
+<p>Honestly, I had intended to write a post on how I built my blog step-by-step for others to follow along. However, due to general life and procrastination I haven't put something together and in the spirit of just getting something published (and thus starting my blog!) I've decided to share the resources that I used to get started. <span class="emoji">😀</span></p>
+<h3>Guides <span class="emoji">📋</span></h3>
+<p>Matthew and Erik's step-by-step guides (links below) are brilliant. I started with Erik's to get a general idea of how Pelican works before using Matthew's to polish up my own blog that you see now. Matthew's guide covers everything from GitHub publishing to integrating Disqus and Google analytics.</p>
+<ul>
+<li><a href="https://matthewdevaney.com/posts/2019/03/10/deploying-a-static-website-to-github-pages/">Matthew Davaney's blog</a></li>
+<li><a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python">Erik O'Shaughnessy' blog</a></li>
+</ul>
+<h3>Adding Emoji Support <span class="emoji">🤪</span></h3>
+<p>Ok, so I took the easy route and just linked a bunch of guides... In penitence I will offer a critical feature not mentioned in the guides above, <strong>Emoji support</strong>.</p>
+<p>To add Emoji support to you blog all you have to do is add the following:</p>
+<p><code>requirements.txt</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">...</span>
+<span class="n">markdown</span><span class="o">-</span><span class="n">markup</span><span class="o">-</span><span class="n">emoji</span>
+<span class="p">...</span>
+</code></pre></div>
+
+
+<p><code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">...</span>
+<span class="c1"># Markdown settings</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown_markup_emoji.markup_emoji&#39;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="o">...</span>
+</code></pre></div>
+
+
+<p>Make sure you run <code>pip install -r requirements.txt</code> to install the module and you're ready to add Emoji's to your Markdown! <span class="emoji">👌</span></p>
+<p>A full list of Unicode Emoji's can be found <a href="https://unicode.org/emoji/charts/full-emoji-list.html">here</a></p>
+<h3>Themes <span class="emoji">🖼</span></h3>
+<p>When I first started looking at themes I couldn't decide which one I wanted and so instead cloned the entire Pelican theme project into my project's root directory:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/getpelican/pelican-themes.git
+</code></pre></div>
+
+
+<p>I ended up using <code>THEME = 'pelican-bootstrap3'</code>, playing with the theme until I arrived at:</p>
+<div class="highlight"><pre><span></span><code><span class="na">BOOTSTRAP_THEME</span> <span class="o">=</span> <span class="s">&#39;darkly&#39;</span>
+<span class="na">PYGMENTS_STYLE</span> <span class="o">=</span> <span class="s">&#39;solarizeddark&#39;</span>
+</code></pre></div>
+
+
+<h3>Plugins <span class="emoji">🔌</span></h3>
+<p>Similar to themes, I cloned the entire Pelican plugin project into my project's root directory:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/getpelican/pelican-plugins.git
+</code></pre></div>
+
+
+<p>I then played around with the plugins that suited my needs and ended up with:</p>
+<div class="highlight"><pre><span></span><code><span class="na">PLUGINS</span> <span class="o">=</span> <span class="s">[&#39;i18n_subsites&#39;, &#39;related_posts&#39;, &#39;series&#39;, &#39;tag_cloud&#39;]</span>
+</code></pre></div>
+
+
+<h2>Helpful Pelican tips <span class="emoji">🧐</span></h2>
+<h3>Drafting Markdown</h3>
+<p>As mentioned in my requirements for a static HTML generator, Markdown was my preferred static markup language. Producing Markdown can be a bit tedious because you can't see the end results until you generate it. Another downside to using Markdown is that most plaintext editors generally don't come with spellchecking..</p>
+<p>To resolve these problems I used the following <a href="https://code.visualstudio.com/Download">Visual Studio Code</a> extensions to preview Markdown as I produced it, and prompt me when there's a grammatical error:</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a></li>
+</ul>
+<h3>Blog preview</h3>
+<p>Before I publish to Github Pages I always preview a local copy of my changes to make sure I'm happy with the formatting and contents. To do this you can run the following:</p>
+<div class="highlight"><pre><span></span><code>pelican content -o output -s publishconf.py <span class="c1"># Generate the static files</span>
+pelican --listen                            <span class="c1"># Serve the files locally</span>
+</code></pre></div>
+
+
+<p>Now go to <code>127.0.0.1:8000</code> in your browser for a preview of your newly added article or updated theme. </p>
+<p>Note: things like Disqus comments won't work locally.</p>
+<h3>Publishing to GitHub Pages</h3>
+<p>Everything looks awesome and now you're ready to push your changes and publish your blog!</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate the static files in the output directory</span>
+pelican content -o output -s publishconf.py                        
+
+<span class="c1"># Add the output directory to the master branch using ghp-import</span>
+ghp-import -m <span class="s2">&quot;Generate Pelican site&quot;</span> --no-jekyll -b master output 
+
+<span class="c1"># Push the master branch (output directory files) to the remote repo</span>
+git push origin master
+
+<span class="c1"># Commit and push the new content to the content branch</span>
+git add content
+git commit -m <span class="s1">&#39;Updated Pelican site!&#39;</span>
+git push origin content
+</code></pre></div>
+
+
+<p>Now it's time to view your changes in all their glory!</p>
+<h2>Summary</h2>
+<p>Hopefully this article was useful and pointed you in the direction of some really helpful resources. I'd like to extend my gratitude to Erik and Matthew for the awesome posts! Couldn't have done it without you.</p>
+<p>Thanks for taking the time to stop by and I hope to continue bringing you helpful/interesting content going forward. <span class="emoji">🍻</span></p>
+<p>P.S. I have no regrets for the amount of emoji's used in this article. <span class="emoji">😂</span></p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="/first-post.html">First Post</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'engineerang'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2020-04-18-hello-world';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://twitter.com/engineerang"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="https://github.com/engineerang"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+    <li class="list-group-item"><a href="https://www.reddit.com/user/engineerang"><i class="fa fa-reddit-square fa-lg"></i> reddit</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="/hello-world.html">Hello World - Using Pelican and GitHub to create a blog.</a></li>
+    <li class="list-group-item"><a href="/first-post.html">First Post</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="/category/tech.html"><i class="fa fa-folder-open fa-lg"></i>Tech</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/blogging.html">blogging</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Engineerang
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons Attribution-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'engineerang'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
