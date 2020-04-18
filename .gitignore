@@ -2,3 +2,5 @@
 .vscode
 __pycache__
 /output
+pelican-plugins/
+pelican-themes/
