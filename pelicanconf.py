@@ -23,7 +23,7 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 # https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites
 # https://github.com/getpelican/pelican-plugins/tree/master/tag_cloud
 
-PLUGINS = ['i18n_subsites', 'related_posts', 'series', 'tag_cloud']
+PLUGINS = ['i18n_subsites', 'related_posts', 'series', 'tag_cloud', 'gist_directive']
 PLUGIN_PATHS = ['./pelican-plugins/']
 I18N_TEMPLATES_LANG = 'en'
 
@@ -55,7 +55,8 @@ AUTHOR_FEED_RSS = None
 # Social widget
 SOCIAL = (('twitter', 'https://twitter.com/engineerang'),
           ('github', 'https://github.com/engineerang'),
-          ('reddit', 'https://www.reddit.com/user/engineerang'),)
+          ('reddit', 'https://www.reddit.com/user/engineerang'),
+          )
 
 DELETE_OUTPUT_DIRECTORY = True
 USE_PAGER = True
