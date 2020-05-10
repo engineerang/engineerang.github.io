@@ -6,7 +6,7 @@ date: 05/10/2020
 author: Engineerang
 Summary: Adding Code Snippets to Pelican from GitHub Gists
 
-As I continue to grow my blog/tech diary I wanted a place to feature useful code snippets or commands I often forget. I'm already using GitHub's Gist to source control a number of code snippets so why not use that as the basis of my snippets here. Luckily enough Pelican supports Gists in the [pelican-plugins repo](https://github.com/getpelican/pelican-plugins) giving us two options for implementation.
+As I continue to grow my blog/tech diary I wanted a place to feature useful code snippets or commands I often forget. I'm already using GitHub's Gist to source control a number of code snippets so why not use that as the basis of my snippets here. Luckily enough, Pelican supports Gists in the [pelican-plugins repo](https://github.com/getpelican/pelican-plugins) giving us two options for implementation.
 
 1. [gist_directive](https://github.com/getpelican/pelican-plugins/tree/master/gist_directive); and
 2. [pelican-gist](https://github.com/streeter/pelican-gist/tree/395e619534b404fb2b94456dc400dc2a8a2f934a)
