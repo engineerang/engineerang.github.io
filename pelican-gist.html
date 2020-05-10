@@ -122,7 +122,7 @@ Engineerang            </a>
 <li><a href="https://github.com/getpelican/pelican-plugins/tree/master/gist_directive">gist_directive</a>; and</li>
 <li><a href="https://github.com/streeter/pelican-gist/tree/395e619534b404fb2b94456dc400dc2a8a2f934a">pelican-gist</a></li>
 </ol>
-<p>After playing around with both these plugins I settled on using gist_directive. Although gist_directive is a restructured-text plugin (previously I mentioned I'm a MarkDown fan), its feature set satisfied the functionality I was after. The main advantages it has over streeter's pelican-gist is that it's able to directly target a GitHub user's Gist and that you can configure the code highlighting. The obvious disadvantage is that I've introduced restructured-text in to a pretty much exclusive MarkDown environment. But hey, it's only one page and the shoe fits.</p>
+<p>After playing around with both of these plugins, I settled on using gist_directive. Although gist_directive is a restructured-text plugin (previously I mentioned I'm a MarkDown fan), its feature set satisfied the functionality I was after. The main advantages it has over streeter's pelican-gist is that it's able to directly target a GitHub user's Gist and that you can configure the code highlighting. The obvious disadvantage is that I've introduced restructured-text in to a pretty much exclusive MarkDown environment. But hey, it's only one page and the shoe fits.</p>
 <p>All that's required is to add gist_directive to your <code>pelicanconf.py</code> like so:</p>
 <div class="highlight"><pre><span></span><code><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;i18n_subsites&#39;</span><span class="p">,</span> <span class="s1">&#39;related_posts&#39;</span><span class="p">,</span> <span class="s1">&#39;series&#39;</span><span class="p">,</span> <span class="s1">&#39;tag_cloud&#39;</span><span class="p">,</span> <span class="s1">&#39;gist_directive&#39;</span><span class="p">]</span>
 </code></pre></div>
@@ -241,10 +241,10 @@ Engineerang            </a>
   <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group " id="tags">
     <li class="list-group-item tag-1">
-      <a href="/tag/python.html">python</a>
+      <a href="/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="/tag/pelican.html">pelican</a>
+      <a href="/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="/tag/blogging.html">blogging</a>
