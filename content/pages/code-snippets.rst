@@ -1,7 +1,7 @@
 Code Snippets
 #############
 
-Featured Code snippets from my personal gist: https://gist.github.com/engineerang
+Featured Code Snippets from my personal gist: https://gist.github.com/engineerang
 
 Pelican
 *******
