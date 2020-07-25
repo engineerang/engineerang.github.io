@@ -11,7 +11,7 @@ As I continue to grow my blog/tech diary I wanted a place to feature useful code
 1. [gist_directive](https://github.com/getpelican/pelican-plugins/tree/master/gist_directive); and
 2. [pelican-gist](https://github.com/streeter/pelican-gist/tree/395e619534b404fb2b94456dc400dc2a8a2f934a)
 
-After playing around with both these plugins I settled on using gist_directive. Although gist_directives is a restructured-text plugin (previously I mentioned I'm a MarkDown fan), its feature set satisfied what I was after. The main advantages it had over streeter's pelican-gist was that it was able to directly target a GitHub user's Gist and you could configure the code highlighting. The obvious disadvantage is that I've introduced restructured-text in to a pretty much exclusive MarkDown environment. But hey, it's only one page and the shoe fits.
+After playing around with both of these plugins, I settled on using gist_directive. Although gist_directive is a restructured-text plugin (previously I mentioned I'm a MarkDown fan), its feature set satisfied the functionality I was after. The main advantages it has over streeter's pelican-gist is that it's able to directly target a GitHub user's Gist and that you can configure the code highlighting. The obvious disadvantage is that I've introduced restructured-text in to a pretty much exclusive MarkDown environment. But hey, it's only one page and the shoe fits.
 
 All that's required is to add gist_directive to your ```pelicanconf.py``` like so:
 
