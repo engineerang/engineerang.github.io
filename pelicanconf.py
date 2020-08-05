@@ -23,7 +23,7 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 # https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites
 # https://github.com/getpelican/pelican-plugins/tree/master/tag_cloud
 
-PLUGINS = ['i18n_subsites', 'related_posts', 'series', 'tag_cloud', 'gist_directive']
+PLUGINS = ['i18n_subsites', 'related_posts', 'series', 'tag_cloud', 'gist_directive', 'goodreads_activity', 'jinja2content']
 PLUGIN_PATHS = ['./pelican-plugins/']
 I18N_TEMPLATES_LANG = 'en'
 
@@ -34,6 +34,7 @@ MARKDOWN = {
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
         'markdown_markup_emoji.markup_emoji': {},
+        'mdx_include': {}
     },
     'output_format': 'html5',
 }
@@ -52,11 +53,27 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Templates
+TEMPLATE_PAGES = {'/Users/alexpool/Documents/code/engineerang.github.io/templates/bookshelf.html': 'pages/bookshelf.html'}
+TEMPLATE_EXTENSIONS = ['.html']
+
+JINJA2CONTENT_TEMPLATES = './templates/'
+
+# Goodreads
+GOODREADS_ACTIVITY_FEED='https://www.goodreads.com/review/list_rss/118898082?key=fxOPV4wXCBqif4nmilKWQNL7Hrj1ELh3W6Y5ER9gsviNxx6L&shelf=%23ALL%23'
+
 # Social widget
 SOCIAL = (('twitter', 'https://twitter.com/engineerang'),
           ('github', 'https://github.com/engineerang'),
           ('reddit', 'https://www.reddit.com/user/engineerang'),
           )
+
+# External Links
+LINKS = (('leadership library for engineers', 'https://leadership-library.dev/The-Leadership-Library-for-Engineers-c3a6bf9482a74fffa5b8c0e85ea5014a'),
+         )
+
+# About
+# ABOUT_ME = "Planning Makes Perfect"
 
 DELETE_OUTPUT_DIRECTORY = True
 USE_PAGER = True
