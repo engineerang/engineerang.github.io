@@ -6,9 +6,8 @@
 &lt;/ol&gt;
 &lt;p&gt;After playing around with both of these plugins, I settled on using gist_directive. Although gist_directive is a restructured-text plugin (previously I mentioned I'm a MarkDown fan), its feature set satisfied the functionality I was after. The main advantages it has over streeter's pelican-gist is that it's able to directly target a GitHub user's Gist and that you can configure the code highlighting. The obvious disadvantage is that I've introduced restructured-text in to a pretty much exclusive MarkDown environment. But hey, it's only one page and the shoe fits.&lt;/p&gt;
 &lt;p&gt;All that's required is to add gist_directive to your &lt;code&gt;pelicanconf.py&lt;/code&gt; like so:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;i18n_subsites&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;related_posts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;series&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tag_cloud&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;gist_directive&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;PLUGINS = [&amp;#39;i18n_subsites&amp;#39;, &amp;#39;related_posts&amp;#39;, &amp;#39;series&amp;#39;, &amp;#39;tag_cloud&amp;#39;, &amp;#39;gist_directive&amp;#39;]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;hr&gt;
 &lt;p&gt;Modify the plugin module file, &lt;code&gt;gist_directive/__init__.py&lt;/code&gt;, so that it can be loaded locally.&lt;/p&gt;
@@ -16,24 +15,21 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;gist_directive&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;after:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;.gist_directive&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;hr&gt;
 &lt;p&gt;and create your restructured-text file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Code&lt;/span&gt; &lt;span class="n"&gt;Snippets&lt;/span&gt;
-&lt;span class="o"&gt;#############&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Code Snippets
+#############
 
-&lt;span class="n"&gt;Code&lt;/span&gt; &lt;span class="n"&gt;snippets&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt; &lt;span class="n"&gt;personal&lt;/span&gt; &lt;span class="n"&gt;gist&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;gist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;engineerang&lt;/span&gt;
+Code snippets from my personal gist: https://gist.github.com/engineerang
 
-&lt;span class="n"&gt;Pelican&lt;/span&gt;
-&lt;span class="o"&gt;*******&lt;/span&gt;
-&lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="n"&gt;gist&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt; &lt;span class="n"&gt;engineerang&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;72286&lt;/span&gt;&lt;span class="n"&gt;b20f138a9aeecac7ec3905203a1&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;bash&lt;/span&gt;
+Pelican
+*******
+.. gist:: engineerang/72286b20f138a9aeecac7ec3905203a1 publish-pelican.sh bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;From now on you can find any Code Snippets I find handy or useful here: &lt;a href="https://engineerang.github.io/pages/code-snippets.html"&gt;Code Snippets&lt;/a&gt;&lt;/strong&gt; &lt;span class="emoji"&gt;👌&lt;/span&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="blogging"></category><category term="python"></category></entry><entry><title>Hello World - Using Pelican and GitHub to create a blog.</title><link href="/hello-world.html" rel="alternate"></link><published>2020-04-18T00:00:00+10:00</published><updated>2020-04-18T00:00:00+10:00</updated><author><name>Engineerang</name></author><id>tag:None,2020-04-18:/hello-world.html</id><summary type="html">&lt;p&gt;The birth of a blog using Pelican and GitHub.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been thinking about writing a blog for a while now and have wanted to do so for a number of reasons. The most notable being that I want to give back to the open source community that has so selflessly helped me grow and learn. Coming in at a close second is that during my journey, there have been occasions where I've had to collate A LOT of resources and dumpster-dive obscure parts of the internet to find answers.&lt;/p&gt;
@@ -72,18 +68,30 @@
 &lt;h3&gt;Guides &lt;span class="emoji"&gt;📋&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;Matthew and Erik's step-by-step guides (links below) are brilliant. I started with Erik's to get a general idea of how Pelican works before using Matthew's to polish up my own blog that you see now. Matthew's guide covers everything from GitHub publishing to integrating Disqus and Google analytics.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/10/deploying-a-static-website-to-github-pages/"&gt;Matthew Davaney's blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python"&gt;Erik O'Shaughnessy' blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Erik O'Shaughnessy's blog &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python"&gt;Run your blog on GitHub Pages with Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Matthew Davaney's blogs&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://web.archive.org/web/20200119050533/https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/"&gt;Build A Blog With Pelican And Python - Pt. 1 Installation &amp;amp; Theme &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://web.archive.org/web/20190419034944/https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/"&gt;Build A Blog With Pelican And Python - Pt. 2 Creating Content&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://htmlpreview.github.io/?https://github.com/matthewdevaney/yourekittenme.github.io/blob/master/posts/2019/03/15/disqus-comments-with-pelican/index.html"&gt;Disqus Comments With Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://htmlpreview.github.io/?https://github.com/matthewdevaney/yourekittenme.github.io/blob/master/posts/2019/03/17/google-analytics-with-pelican/index.html"&gt;Google Analytics With Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Adding Emoji Support &lt;span class="emoji"&gt;🤪&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;Ok, so I took the easy route and just linked a bunch of guides... In penitence I will offer a critical feature not mentioned in the guides above, &lt;strong&gt;Emoji support&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;To add Emoji support to your blog all you have to do is the following:&lt;/p&gt;
 &lt;p&gt;Add the &lt;a href="https://pypi.org/project/markdown-markup-emoji/"&gt;Markdown emoji module&lt;/a&gt; to your &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;...&lt;/span&gt;
-&lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;markup&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;emoji&lt;/span&gt;
-&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;...
+markdown-markup-emoji
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;and install with pip, &lt;code&gt;pip install -r requirements.txt&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Next, add the emoji Markdown extension to your &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
@@ -101,31 +109,28 @@
 &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Now you're all set to use Emoji's in your Markdown! &lt;span class="emoji"&gt;👌&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;A full list of Unicode Emoji's can be found &lt;a href="https://unicode.org/emoji/charts/full-emoji-list.html"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Themes &lt;span class="emoji"&gt;🖼&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;When I first started looking at themes I couldn't decide which one I wanted and so instead cloned the entire Pelican theme project into my project's root directory:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-themes.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/getpelican/pelican-themes.git
+$ pelican-themes -vi ./pelican-themes/ &lt;span class="c1"&gt;# this will install all the themes to the pelican namespace&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;I ended up using &lt;code&gt;THEME = 'pelican-bootstrap3'&lt;/code&gt;, playing with the theme until I arrived at:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;BOOTSTRAP_THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;darkly&amp;#39;&lt;/span&gt;
 &lt;span class="na"&gt;PYGMENTS_STYLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;solarizeddark&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h3&gt;Plugins &lt;span class="emoji"&gt;🔌&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;Similar to themes, I cloned the entire Pelican plugin project into my project's root directory:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/getpelican/pelican-plugins.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/getpelican/pelican-plugins.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;I then played around with the plugins that suited my needs and ended up with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[&amp;#39;i18n_subsites&amp;#39;, &amp;#39;related_posts&amp;#39;, &amp;#39;series&amp;#39;, &amp;#39;tag_cloud&amp;#39;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[&amp;#39;./pelican-plugins/&amp;#39;]&lt;/span&gt;
+&lt;span class="na"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[&amp;#39;i18n_subsites&amp;#39;, &amp;#39;related_posts&amp;#39;, &amp;#39;series&amp;#39;, &amp;#39;tag_cloud&amp;#39;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2&gt;Helpful Pelican tips &lt;span class="emoji"&gt;🧐&lt;/span&gt;&lt;/h2&gt;
 &lt;h3&gt;Drafting Markdown&lt;/h3&gt;
@@ -140,7 +145,6 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican content -o output -s publishconf.py &lt;span class="c1"&gt;# Generate the static files&lt;/span&gt;
 pelican --listen                            &lt;span class="c1"&gt;# Serve the files locally&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Now go to &lt;code&gt;127.0.0.1:8000&lt;/code&gt; in your browser for a preview of your newly added article or updated theme. &lt;/p&gt;
 &lt;p&gt;Note: things like Disqus comments won't work locally.&lt;/p&gt;
@@ -160,7 +164,6 @@ git add content
 git commit -m &lt;span class="s1"&gt;&amp;#39;Updated Pelican site!&amp;#39;&lt;/span&gt;
 git push origin content
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Now it's time to view your changes in all their glory!&lt;/p&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;

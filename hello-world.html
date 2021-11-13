@@ -156,18 +156,30 @@ Engineerang            </a>
 <h3>Guides <span class="emoji">📋</span></h3>
 <p>Matthew and Erik's step-by-step guides (links below) are brilliant. I started with Erik's to get a general idea of how Pelican works before using Matthew's to polish up my own blog that you see now. Matthew's guide covers everything from GitHub publishing to integrating Disqus and Google analytics.</p>
 <ul>
-<li><a href="https://matthewdevaney.com/posts/2019/03/10/deploying-a-static-website-to-github-pages/">Matthew Davaney's blog</a></li>
-<li><a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python">Erik O'Shaughnessy' blog</a></li>
+<li>
+<p>Erik O'Shaughnessy's blog </p>
+<ul>
+<li><a href="https://opensource.com/article/19/5/run-your-blog-github-pages-python">Run your blog on GitHub Pages with Python</a></li>
+</ul>
+</li>
+<li>
+<p>Matthew Davaney's blogs</p>
+<ul>
+<li><a href="https://web.archive.org/web/20200119050533/https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/">Build A Blog With Pelican And Python - Pt. 1 Installation &amp; Theme </a></li>
+<li><a href="https://web.archive.org/web/20190419034944/https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/">Build A Blog With Pelican And Python - Pt. 2 Creating Content</a></li>
+<li><a href="https://htmlpreview.github.io/?https://github.com/matthewdevaney/yourekittenme.github.io/blob/master/posts/2019/03/15/disqus-comments-with-pelican/index.html">Disqus Comments With Pelican</a></li>
+<li><a href="https://htmlpreview.github.io/?https://github.com/matthewdevaney/yourekittenme.github.io/blob/master/posts/2019/03/17/google-analytics-with-pelican/index.html">Google Analytics With Pelican</a></li>
+</ul>
+</li>
 </ul>
 <h3>Adding Emoji Support <span class="emoji">🤪</span></h3>
 <p>Ok, so I took the easy route and just linked a bunch of guides... In penitence I will offer a critical feature not mentioned in the guides above, <strong>Emoji support</strong>.</p>
 <p>To add Emoji support to your blog all you have to do is the following:</p>
 <p>Add the <a href="https://pypi.org/project/markdown-markup-emoji/">Markdown emoji module</a> to your <code>requirements.txt</code></p>
-<div class="highlight"><pre><span></span><code><span class="p">...</span>
-<span class="n">markdown</span><span class="o">-</span><span class="n">markup</span><span class="o">-</span><span class="n">emoji</span>
-<span class="p">...</span>
+<div class="highlight"><pre><span></span><code>...
+markdown-markup-emoji
+...
 </code></pre></div>
-
 
 <p>and install with pip, <code>pip install -r requirements.txt</code>.</p>
 <p>Next, add the emoji Markdown extension to your <code>pelicanconf.py</code></p>
@@ -185,31 +197,28 @@ Engineerang            </a>
 <span class="o">...</span>
 </code></pre></div>
 
-
 <p>Now you're all set to use Emoji's in your Markdown! <span class="emoji">👌</span></p>
 <p>A full list of Unicode Emoji's can be found <a href="https://unicode.org/emoji/charts/full-emoji-list.html">here</a></p>
 <h3>Themes <span class="emoji">🖼</span></h3>
 <p>When I first started looking at themes I couldn't decide which one I wanted and so instead cloned the entire Pelican theme project into my project's root directory:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/getpelican/pelican-themes.git
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/getpelican/pelican-themes.git
+$ pelican-themes -vi ./pelican-themes/ <span class="c1"># this will install all the themes to the pelican namespace</span>
 </code></pre></div>
-
 
 <p>I ended up using <code>THEME = 'pelican-bootstrap3'</code>, playing with the theme until I arrived at:</p>
 <div class="highlight"><pre><span></span><code><span class="na">BOOTSTRAP_THEME</span> <span class="o">=</span> <span class="s">&#39;darkly&#39;</span>
 <span class="na">PYGMENTS_STYLE</span> <span class="o">=</span> <span class="s">&#39;solarizeddark&#39;</span>
 </code></pre></div>
 
-
 <h3>Plugins <span class="emoji">🔌</span></h3>
 <p>Similar to themes, I cloned the entire Pelican plugin project into my project's root directory:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/getpelican/pelican-plugins.git
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/getpelican/pelican-plugins.git
 </code></pre></div>
-
 
 <p>I then played around with the plugins that suited my needs and ended up with:</p>
-<div class="highlight"><pre><span></span><code><span class="na">PLUGINS</span> <span class="o">=</span> <span class="s">[&#39;i18n_subsites&#39;, &#39;related_posts&#39;, &#39;series&#39;, &#39;tag_cloud&#39;]</span>
+<div class="highlight"><pre><span></span><code><span class="na">PLUGIN_PATHS</span> <span class="o">=</span> <span class="s">[&#39;./pelican-plugins/&#39;]</span>
+<span class="na">PLUGINS</span> <span class="o">=</span> <span class="s">[&#39;i18n_subsites&#39;, &#39;related_posts&#39;, &#39;series&#39;, &#39;tag_cloud&#39;]</span>
 </code></pre></div>
-
 
 <h2>Helpful Pelican tips <span class="emoji">🧐</span></h2>
 <h3>Drafting Markdown</h3>
@@ -224,7 +233,6 @@ Engineerang            </a>
 <div class="highlight"><pre><span></span><code>pelican content -o output -s publishconf.py <span class="c1"># Generate the static files</span>
 pelican --listen                            <span class="c1"># Serve the files locally</span>
 </code></pre></div>
-
 
 <p>Now go to <code>127.0.0.1:8000</code> in your browser for a preview of your newly added article or updated theme. </p>
 <p>Note: things like Disqus comments won't work locally.</p>
@@ -244,7 +252,6 @@ git add content
 git commit -m <span class="s1">&#39;Updated Pelican site!&#39;</span>
 git push origin content
 </code></pre></div>
-
 
 <p>Now it's time to view your changes in all their glory!</p>
 <h2>Summary</h2>
@@ -337,10 +344,10 @@ git push origin content
   <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group " id="tags">
     <li class="list-group-item tag-1">
-      <a href="/tag/pelican.html">pelican</a>
+      <a href="/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="/tag/python.html">python</a>
+      <a href="/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="/tag/blogging.html">blogging</a>
